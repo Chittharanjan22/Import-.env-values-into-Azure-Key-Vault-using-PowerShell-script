@@ -1,4 +1,4 @@
-# Import .env Secrets into Azure Key Vault using PowerShell
+# Import .env values into Azure Key Vault using PowerShell Script
 
 ## Overview
 
