@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes how to import application environment variables from a `.env` file into an existing Azure Key Vault using PowerShell.
+This document describes how to import am application's Environment variables from a **`.env` file** into an existing **Azure Key Vault** using **PowerShell**.
 
 This approach is useful when developers share application configuration values and the DevOps/Cloud team needs to securely store them in Azure Key Vault.
 
@@ -10,15 +10,16 @@ This approach is useful when developers share application configuration values a
 
 ## Prerequisites
 
-### Azure Access
+### Azure Access for the User
 
 Ensure you have one of the following permissions on the Azure Key Vault:
 
 * Key Vault Administrator
 * Key Vault Secrets Officer
 * Contributor with appropriate Key Vault permissions
+* Ensure that your IP gets whitelisted to access Secrets in Azure Keyvault
 
-### Azure PowerShell Module
+### Install Azure PowerShell Module in local
 
 Install the Azure PowerShell module if not already installed:
 
@@ -34,7 +35,7 @@ Get-Module -ListAvailable Az*
 
 ---
 
-## Login to Azure
+## Login to Azure through PowerShell/CMD
 
 ```powershell
 Connect-AzAccount
@@ -54,7 +55,7 @@ Set-AzContext -SubscriptionId "<subscription-id>"
 
 ---
 
-## Sample .env File
+## Keep Sample .env File in local
 
 ```env
 DB_HOST=myserver.postgres.database.azure.com
@@ -69,7 +70,7 @@ JWT_SECRET=jwt-secret-value
 
 ---
 
-## PowerShell Script
+## Create PowerShell Script in local
 
 ```powershell
 $vaultName = "my-keyvault"
